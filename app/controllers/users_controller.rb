@@ -5,13 +5,26 @@ class UsersController < ApplicationController
     render json: current_user, include: [:trees]
   end
 
+  # GET /users
+  def index
+    @users = User.all
+
+    render json: @users
+  end
+
+  # GET /users/1
+  def show
+    render json: @user, include: [:trees]
+  end
+
   # POST /users
   def create
     @user = User.create(user_params)
+    byebug
     if @user.valid?
       render json: {user: @user, token: create_token(@user.id)}
     else
-      render json: {errors: user.errors.full_messages}, status: :unprocessable_entity
+      render json: {errors: @user.errors.full_messages}, status: :unprocessable_entity
     end
   end
 
@@ -37,6 +50,6 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.permit(:username, :password_digest)
+      params.permit(:username, :password)
     end
 end
