@@ -16,7 +16,7 @@ end
 # POST /stewards
 def create
   @steward = Steward.new(steward_params)
-
+  
   if @steward.save
     render json: @steward, status: :created, location: @steward
   else
@@ -46,8 +46,7 @@ private
 
   # Only allow a trusted parameter "white list" through.
   def steward_params
-    params.require(:steward).permit(:user_id, :job_id)
+    params.permit(:user_id, :tree_id)
   end
 
-end
 end
