@@ -5,7 +5,6 @@ class ApplicationController < ActionController::API
   end
 
   def secret
-    # ENV['jwt_secret']
     Rails.application.credentials.jwt_secret
   end
 
@@ -21,5 +20,5 @@ class ApplicationController < ActionController::API
     payload = { user_id: user_id }
     JWT.encode(payload, secret, 'HS256')
   end
-  
+
 end
