@@ -1,0 +1,2 @@
+class NtaName < ApplicationRecord
+end

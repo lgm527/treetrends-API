@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :nta_names
   resources :stewards
   resources :trees
   resources :users
