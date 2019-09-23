@@ -1,2 +1,0 @@
-class NtaNamesController < ApplicationController
-end
