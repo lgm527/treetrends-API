@@ -5,6 +5,12 @@ class UsersController < ApplicationController
     render json: current_user, include: [:trees]
   end
 
+  def friends
+    @users = User.all
+    
+    render json: @users, include: [:trees]
+  end
+
   # GET /users
   def index
     @users = User.all
