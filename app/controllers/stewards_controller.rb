@@ -5,7 +5,7 @@ class StewardsController < ApplicationController
 def index
   @stewards = Steward.all
 
-  render json: @stewards
+  render json: @stewards, include: [:user, :tree]
 end
 
 # GET /stewards/1
@@ -16,7 +16,7 @@ end
 # POST /stewards
 def create
   @steward = Steward.new(steward_params)
-  
+
   if @steward.save
     render json: @steward, status: :created, location: @steward
   else
