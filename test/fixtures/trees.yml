@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  census_id: 1
+  species: MyString
+  steward: MyString
+  health: MyString
+  address: MyString
+  boroname: MyString
+  zipcode: 1
+
+two:
+  census_id: 1
+  species: MyString
+  steward: MyString
+  health: MyString
+  address: MyString
+  boroname: MyString
+  zipcode: 1
