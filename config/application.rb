@@ -32,7 +32,7 @@ module TreetrendsApi
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
-    config.i18n.fallbacks = true
+    config.i18n.fallbacks = [I18n.default_locale]
 
 
   end
